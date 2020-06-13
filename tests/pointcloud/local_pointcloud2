@@ -1,0 +1,60 @@
+[INFO] [1520180225.999602, 5191.690000]: /cloudsub_66333_1520180130493 Time from previous message 11.74
+[INFO] [1520180240.293081, 5205.910000]: /cloudsub_66333_1520180130493 I heard a message of sensor_msgs/PointCloud2
+[INFO] [1520180240.293552, 5205.910000]: /cloudsub_66333_1520180130493 Time from previous message 14.2
+[INFO] [1520180251.719821, 5217.320000]: /cloudsub_66333_1520180130493 I heard a message of sensor_msgs/PointCloud2
+[INFO] [1520180251.720721, 5217.380000]: /cloudsub_66333_1520180130493 Time from previous message 11.39
+[INFO] [1520180262.880720, 5228.510000]: /cloudsub_66333_1520180130493 I heard a message of sensor_msgs/PointCloud2
+[INFO] [1520180262.881270, 5228.560000]: /cloudsub_66333_1520180130493 Time from previous message 11.1
+[INFO] [1520180274.410170, 5239.990000]: /cloudsub_66333_1520180130493 I heard a message of sensor_msgs/PointCloud2
+[INFO] [1520180274.410955, 5240.100000]: /cloudsub_66333_1520180130493 Time from previous message 11.54
+[INFO] [1520180287.080891, 5252.690000]: /cloudsub_66333_1520180130493 I heard a message of sensor_msgs/PointCloud2
+[INFO] [1520180287.081395, 5252.770000]: /cloudsub_66333_1520180130493 Time from previous message 12.67
+[INFO] [1520180297.859035, 5263.510000]: /cloudsub_66333_1520180130493 I heard a message of sensor_msgs/PointCloud2
+[INFO] [1520180297.859559, 5263.530000]: /cloudsub_66333_1520180130493 Time from previous message 10.76
+[INFO] [1520180309.671537, 5275.240000]: /cloudsub_66333_1520180130493 I heard a message of sensor_msgs/PointCloud2
+[INFO] [1520180309.672468, 5275.320000]: /cloudsub_66333_1520180130493 Time from previous message 11.79
+[INFO] [1520180321.758524, 5287.360000]: /cloudsub_66333_1520180130493 I heard a message of sensor_msgs/PointCloud2
+[INFO] [1520180321.759327, 5287.420000]: /cloudsub_66333_1520180130493 Time from previous message 12.1
+[INFO] [1520180334.406095, 5299.960000]: /cloudsub_66333_1520180130493 I heard a message of sensor_msgs/PointCloud2
+[INFO] [1520180334.406562, 5299.960000]: /cloudsub_66333_1520180130493 Time from previous message 12.54
+[INFO] [1520180345.593059, 5311.160000]: /cloudsub_66333_1520180130493 I heard a message of sensor_msgs/PointCloud2
+[INFO] [1520180345.594062, 5311.230000]: /cloudsub_66333_1520180130493 Time from previous message 11.27
+[INFO] [1520180358.643955, 5324.200000]: /cloudsub_66333_1520180130493 I heard a message of sensor_msgs/PointCloud2
+[INFO] [1520180358.644671, 5324.260000]: /cloudsub_66333_1520180130493 Time from previous message 13.03
+[INFO] [1520180369.869000, 5335.510000]: /cloudsub_66333_1520180130493 I heard a message of sensor_msgs/PointCloud2
+
+
+
+test@ubuntu4:~$ rostopic hz /local/robot/camera/depth/points 
+average rate: 0.081
+	min: 12.290s max: 12.290s std dev: 0.00000s window: 2
+average rate: 0.085
+	min: 11.160s max: 12.290s std dev: 0.56500s window: 3
+average rate: 0.088
+	min: 10.780s max: 12.290s std dev: 0.64130s window: 4
+average rate: 0.086
+	min: 10.780s max: 12.520s std dev: 0.73449s window: 5
+
+
+
+
+
+test@ubuntu4:~$ rostopic bw /local/robot/camera/depth/points 
+	mean: 9830.53KB min: 9830.53KB max: 9830.53KB window: 4
+average: 824.49KB/s
+	mean: 9830.53KB min: 9830.53KB max: 9830.53KB window: 4
+average: 1.01MB/s
+	mean: 9.83MB min: 9.83MB max: 9.83MB window: 5
+average: 989.03KB/s
+	mean: 9830.53KB min: 9830.53KB max: 9830.53KB window: 5
+average: 971.61KB/s
+	mean: 9830.53KB min: 9830.53KB max: 9830.53KB window: 6
+average: 846.07KB/s
+	mean: 9830.53KB min: 9830.53KB max: 9830.53KB window: 6
+average: 834.09KB/s
+	mean: 9830.53KB min: 9830.53KB max: 9830.53KB window: 6
+average: 822.45KB/s
+	mean: 9830.53KB min: 9830.53KB max: 9830.53KB window: 6
+average: 811.13KB/s
+	mean: 9830.53KB min: 9830.53KB max: 9830.53KB window: 6
+average: 933.48KB/s

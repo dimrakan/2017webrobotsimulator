@@ -1,0 +1,56 @@
+[INFO] [1520158920.183710]: /cloudsub_90714_1520158878699 Message type tf2_msgs/TFMessage 
+[INFO] [1520158920.184029]: /cloudsub_90714_1520158878699 Time from previous message 0.00927782058716 
+[INFO] [1520158920.193805]: /cloudsub_90714_1520158878699 Message type tf2_msgs/TFMessage 
+[INFO] [1520158920.194198]: /cloudsub_90714_1520158878699 Time from previous message 0.0098249912262 
+[INFO] [1520158920.203281]: /cloudsub_90714_1520158878699 Message type tf2_msgs/TFMessage 
+[INFO] [1520158920.203682]: /cloudsub_90714_1520158878699 Time from previous message 0.00919795036316 
+[INFO] [1520158920.213203]: /cloudsub_90714_1520158878699 Message type tf2_msgs/TFMessage 
+[INFO] [1520158920.213700]: /cloudsub_90714_1520158878699 Time from previous message 0.00972890853882 
+[INFO] [1520158920.227292]: /cloudsub_90714_1520158878699 Message type tf2_msgs/TFMessage 
+[INFO] [1520158920.227708]: /cloudsub_90714_1520158878699 Time from previous message 0.0137560367584 
+[INFO] [1520158920.236814]: /cloudsub_90714_1520158878699 Message type tf2_msgs/TFMessage 
+[INFO] [1520158920.237299]: /cloudsub_90714_1520158878699 Time from previous message 0.00930690765381 
+[INFO] [1520158920.244203]: /cloudsub_90714_1520158878699 Message type tf2_msgs/TFMessage 
+[INFO] [1520158920.244813]: /cloudsub_90714_1520158878699 Time from previous message 0.00709986686707 
+[INFO] [1520158920.254800]: /cloudsub_90714_1520158878699 Message type tf2_msgs/TFMessage 
+[INFO] [1520158920.255268]: /cloudsub_90714_1520158878699 Time from previous message 0.01016497612 
+[INFO] [1520158920.264598]: /cloudsub_90714_1520158878699 Message type tf2_msgs/TFMessage 
+[INFO] [1520158920.264995]: /cloudsub_90714_1520158878699 Time from previous message 0.00948190689087 
+[INFO] [1520158920.277231]: /cloudsub_90714_1520158878699 Message type tf2_msgs/TFMessage 
+[INFO] [1520158920.277644]: /cloudsub_90714_1520158878699 Time from previous message 0.0122950077057 
+
+
+test@ubuntu4:~$ rostopic hz /local/tf 
+subscribed to [/local/tf]
+average rate: 91.413
+	min: 0.001s max: 0.089s std dev: 0.00898s window: 91
+average rate: 95.615
+	min: 0.001s max: 0.089s std dev: 0.00659s window: 190
+average rate: 97.754
+	min: 0.001s max: 0.089s std dev: 0.00572s window: 293
+average rate: 98.253
+	min: 0.001s max: 0.089s std dev: 0.00512s window: 393
+average rate: 98.591
+	min: 0.001s max: 0.089s std dev: 0.00469s window: 493
+average rate: 98.861
+	min: 0.001s max: 0.089s std dev: 0.00443s window: 593
+average rate: 99.025
+	min: 0.001s max: 0.089s std dev: 0.00419s window: 692
+^Caverage rate: 98.566
+	min: 0.001s max: 0.089s std dev: 0.00459s window: 738
+
+	
+test@ubuntu4:~$ rostopic bw /local/tf 
+subscribed to [/local/tf]
+average: 11.69KB/s
+	mean: 0.12KB min: 0.12KB max: 0.12KB window: 99
+average: 11.25KB/s
+	mean: 0.12KB min: 0.12KB max: 0.12KB window: 100
+average: 11.64KB/s
+	mean: 0.12KB min: 0.12KB max: 0.12KB window: 100
+average: 11.59KB/s
+	mean: 0.12KB min: 0.12KB max: 0.12KB window: 100
+average: 11.45KB/s
+	mean: 0.12KB min: 0.12KB max: 0.12KB window: 100
+^Caverage: 9.71KB/s
+	mean: 0.12KB min: 0.12KB max: 0.12KB window: 100

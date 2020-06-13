@@ -1,0 +1,54 @@
+[INFO] [1520159875.556997]: /cloudsub_16077_1520159831250 Time from previous message 0.00603795051575 
+[INFO] [1520159875.557915]: /cloudsub_16077_1520159831250 Message type nav_msgs/Odometry 
+[INFO] [1520159875.558273]: /cloudsub_16077_1520159831250 Time from previous message 0.000962972640991 
+[INFO] [1520159875.559491]: /cloudsub_16077_1520159831250 Message type nav_msgs/Odometry 
+[INFO] [1520159875.559842]: /cloudsub_16077_1520159831250 Time from previous message 0.00125885009766 
+[INFO] [1520159875.563118]: /cloudsub_16077_1520159831250 Message type nav_msgs/Odometry 
+[INFO] [1520159875.563499]: /cloudsub_16077_1520159831250 Time from previous message 0.00330305099487 
+[INFO] [1520159875.599753]: /cloudsub_16077_1520159831250 Message type nav_msgs/Odometry 
+[INFO] [1520159875.600280]: /cloudsub_16077_1520159831250 Time from previous message 0.0364279747009 
+[INFO] [1520159875.602544]: /cloudsub_16077_1520159831250 Message type nav_msgs/Odometry 
+[INFO] [1520159875.602885]: /cloudsub_16077_1520159831250 Time from previous message 0.00227403640747 
+[INFO] [1520159875.606855]: /cloudsub_16077_1520159831250 Message type nav_msgs/Odometry 
+[INFO] [1520159875.607448]: /cloudsub_16077_1520159831250 Time from previous message 0.00422096252441 
+[INFO] [1520159875.643406]: /cloudsub_16077_1520159831250 Message type nav_msgs/Odometry 
+[INFO] [1520159875.644187]: /cloudsub_16077_1520159831250 Time from previous message 0.0362989902496 
+[INFO] [1520159875.645844]: /cloudsub_16077_1520159831250 Message type nav_msgs/Odometry 
+[INFO] [1520159875.646363]: /cloudsub_16077_1520159831250 Time from previous message 0.00155520439148 
+[INFO] [1520159875.647392]: /cloudsub_16077_1520159831250 Message type nav_msgs/Odometry 
+[INFO] [1520159875.647689]: /cloudsub_16077_1520159831250 Time from previous message 0.000900030136108 
+
+test@ubuntu4:~$ rostopic hz /local/robot/odom 
+subscribed to [/local/robot/odom]
+average rate: 97.572
+	min: 0.001s max: 0.042s std dev: 0.01116s window: 93
+average rate: 98.883
+	min: 0.000s max: 0.043s std dev: 0.01085s window: 192
+average rate: 99.517
+	min: 0.000s max: 0.054s std dev: 0.01353s window: 292
+average rate: 100.044
+	min: 0.000s max: 0.054s std dev: 0.01475s window: 396
+average rate: 99.228
+	min: 0.000s max: 0.054s std dev: 0.01541s window: 490
+average rate: 99.191
+	min: 0.000s max: 0.054s std dev: 0.01583s window: 589
+average rate: 99.188
+	min: 0.000s max: 0.054s std dev: 0.01617s window: 687
+^Caverage rate: 99.184
+	min: 0.000s max: 0.054s std dev: 0.01629s window: 735
+
+	
+test@ubuntu4:~$ rostopic bw /local/robot/odom 
+subscribed to [/local/robot/odom]
+average: 72.71KB/s
+	mean: 0.74KB min: 0.74KB max: 0.74KB window: 97
+average: 73.25KB/s
+	mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+average: 70.84KB/s
+	mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+average: 71.38KB/s
+	mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+average: 73.89KB/s
+	mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+^Caverage: 65.04KB/s
+	mean: 0.74KB min: 0.74KB max: 0.74KB window: 100

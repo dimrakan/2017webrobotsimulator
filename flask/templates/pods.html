@@ -1,0 +1,75 @@
+      {% extends "home.html" %}
+
+        {% block control %}
+        <li ><a id="side-home" href="#" style="font-size:17px;">Home</a></li>
+        <li class="active"><a id="side-pods" href="#" style="font-size:17px;">Simulation Environments</a></li>
+        <li><a id="side-custom" href="#" style="font-size:17px;">Custom Simulation</a></li>
+        <li ><a id="side-packages" href="#" style="font-size:17px;">Upload Package</a></li>
+        <li ><a id="side-deploys" href="#" style="font-size:17px;">Deployments</a></li>
+        {% endblock %}
+
+	  {% block panel %}
+        <script>$(document).ready(function() {
+        if ('{{status1}}'=='Running') {document.getElementById("thestatus1").className="label label-success";}
+        else if ('{{status1}}'=='Terminating') {document.getElementById("thestatus1").className = "label label-danger";}
+        else  {document.getElementById("thestatus1").className = "label label-default";}
+        if ('{{status2}}'=='Running') {document.getElementById("thestatus2").className="label label-success";}
+        else if ('{{status2}}'=='Terminating') {document.getElementById("thestatus2").className = "label label-danger";}
+        else  {document.getElementById("thestatus2").className = "label label-default";}
+        if ('{{status3}}'=='Running') {document.getElementById("thestatus3").className="label label-success";}
+        else if ('{{status3}}'=='Terminating') {document.getElementById("thestatus3").className = "label label-danger";}
+        else  {document.getElementById("thestatus3").className = "label label-default";}
+        });
+        </script> 
+	<h1>Simulation Environment Control Panel</h1>
+	  <br>
+	  <div class="row">
+	   <!-- <div class="col-sm-2"></div> -->
+	   <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Password</th>
+		<th></th>
+		<th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Simulation Environment 1</td>
+        <td><span class="label" style="font-size:13px;" id="thestatus1">{{status1}}</span></td>
+        <td >{{pass1}}</td>
+		<td><button type="button" class="btn btn-primary" onclick="add_pod('{{username}}',1)">Start</button></td>
+		<td><button type="button" class="btn btn-danger " onclick="rm_pod('{{username}}',1)">Stop</button></td>
+      </tr>
+      <tr>
+        <td>Simulation Environment 2</td>
+        <td><span class="label " style="font-size:13px;" id="thestatus2">{{status2}}</span></td>
+        <td>{{pass2}}</td>
+		<td><button type="button" class="btn btn-primary" onclick="add_pod('{{username}}',2)">Start</button></td>
+		<td><button type="button" class="btn btn-danger " onclick="rm_pod('{{username}}',2)">Stop</button></td>
+      </tr>
+      <tr>
+        <td>Simulation Environment 3</td>
+		<td><span class="label " style="font-size:13px;" id="thestatus3">{{status3}}</span></td>
+        <td>{{pass3}}</td>
+ 		<td><button type="button" class="btn btn-primary" onclick="add_pod('{{username}}',3)">Start</button></td>
+		<td><button type="button" class="btn btn-danger " onclick="rm_pod('{{username}}',3)">Stop</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id='start_pod' class=' text-info'/>
+</div>
+       
+	  <div class="col-sm-offset-4 col-sm-4">
+	    <a id="stat" class="btn btn-info " role="button" href="/users/{{username}}/pods">Get Status of Pods</a>
+	  </div>
+	  <!-- <div class="col-sm-2"></div> -->
+	  <br><br>
+          <script>
+          var username=document.getElementById("user").innerHTML;
+          var statref="/users/"+username+"/pods?token="+token;
+          document.getElementById("stat").setAttribute("href",statref);
+          </script>
+	  {% endblock %}

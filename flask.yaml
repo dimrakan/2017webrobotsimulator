@@ -1,0 +1,39 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+  labels:
+    name: flask
+spec:
+  ports:
+  - port: 8000
+    targetPort: 8000
+  externalIPs:
+  - 83.212.96.15
+  selector:
+    name: app
+
+---
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flask
+  labels:
+    name: app
+spec:
+  containers:
+  - image: dimrak/flask_server:v4.5
+    name: flask
+    command: ['python3']
+    args: ['app.py']
+    volumeMounts:
+      - mountPath: "/usr/src/app/upload/"
+        name: myupload
+        subPath: upload
+  volumes:
+    - name: myupload
+      persistentVolumeClaim:
+        claimName: claimdata

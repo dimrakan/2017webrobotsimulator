@@ -1,0 +1,52 @@
+
+
+root@pod1:/# rostopic hz /robot/camera/rgb/image_raw/compressed
+subscribed to [/robot/camera/rgb/image_raw/compressed]
+WARNING: may be using simulated time
+average rate: 5.374
+        min: 0.100s max: 0.260s std dev: 0.04125s window: 65
+average rate: 5.414
+        min: 0.100s max: 0.260s std dev: 0.04059s window: 71
+average rate: 5.452
+        min: 0.100s max: 0.260s std dev: 0.04106s window: 77
+average rate: 5.492
+        min: 0.100s max: 0.260s std dev: 0.04033s window: 83
+average rate: 5.549
+        min: 0.100s max: 0.260s std dev: 0.04120s window: 89
+average rate: 5.628
+        min: 0.100s max: 0.260s std dev: 0.04103s window: 96
+average rate: 5.652
+        min: 0.100s max: 0.260s std dev: 0.04061s window: 102
+average rate: 5.739
+        min: 0.100s max: 0.260s std dev: 0.04060s window: 109
+^Caverage rate: 5.746
+        min: 0.100s max: 0.260s std dev: 0.04048s window: 110
+
+root@pod1:/# rostopic info /robot/camera/rgb/image_raw/compressed
+Type: sensor_msgs/CompressedImage
+
+Publishers:
+ * /gazebo (http://10.32.0.11:39969/)
+
+Subscribers: None
+
+root@pod1:/# rostopic bw /robot/camera/rgb/image_raw/compressed
+subscribed to [/robot/camera/rgb/image_raw/compressed]
+average: 39.51KB/s
+        mean: 6.25KB min: 6.25KB max: 6.25KB window: 6
+average: 38.44KB/s
+        mean: 6.25KB min: 6.25KB max: 6.25KB window: 12
+average: 36.00KB/s
+        mean: 6.25KB min: 6.25KB max: 6.25KB window: 17
+average: 34.79KB/s
+        mean: 6.25KB min: 6.25KB max: 6.25KB window: 22
+average: 37.85KB/s
+        mean: 6.25KB min: 6.25KB max: 6.25KB window: 30
+average: 36.73KB/s
+        mean: 6.25KB min: 6.25KB max: 6.25KB window: 35
+average: 35.94KB/s
+        mean: 6.25KB min: 6.25KB max: 6.25KB window: 40
+average: 35.34KB/s
+        mean: 6.25KB min: 6.25KB max: 6.25KB window: 45
+^Caverage: 32.89KB/s
+        mean: 6.25KB min: 6.25KB max: 6.25KB window: 50

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{{url_for('static', filename='js/jquery.js')}}"></script>
+  <script src="{{url_for('static', filename='js/index.js')}}"></script>
+  <script src="{{url_for('static', filename='js/roslib.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/eventemitter.min.js')}}"></script>
+
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 600px;}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: black;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: 600px;} 
+    }
+  
+      
+  </style>
+ 
+</head>
+<body>
+<span id="user" style="display:none">{{username}}</span>
+<footer class="container-fluid">
+  <h3  style="display:inline-block;">Web Simulator</h3><a id="top-logout" href="#" style="float:right;font-size:20px;color:white;margin:bottom">Logout</a>
+</footer>
+<div class="container-fluid" >
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h3 class="text-center">Control Panel</h3><br>
+      <ul class="nav nav-pills nav-stacked" >
+        {% block control %}
+        <li class="active"><a id="side-home" href="#" style="font-size:17px;">Home</a></li>
+        <li><a id="side-pods" href="#" style="font-size:17px;">Simulation Environment</a></li>
+        <li><a id="side-custom" href="#" style="font-size:17px;">Custom Simulation</a></li>
+        <li ><a id="side-packages" href="#" style="font-size:17px;">Upload Package</a></li>
+        <li ><a id="side-deploys" href="#" style="font-size:17px;">Deployments</a></li>
+        {% endblock %}
+      </ul><br>
+    </div>
+
+    <div class="col-sm-9">
+	  {% block panel %} 
+      <h1 style="text-decoration: underline;">Home</h1>
+	  <br>
+	  <div class="row">
+	  <div class="col-sm-offset-1">
+	   <h3 class="text-primary">Hello {{username}}!</h3>
+	   <p class="text-info">Here is the environment to test some robots!</p>
+	   <p class="text-info">First you need to select Simulation environment tab and start a simulation environment.</p>
+	   <p class="text-info">Then you can do one of the following:</p>
+	   <p class="text-info">-Select Custom Simulation tab to create your simulation with our robots.</p>
+	   <p class="text-info">-Select Upload Package to load your own package,build it in a pod and run the simulation.</p>
+           <p class="text-info">Then you can select Deployments to get info about your simulation</p>
+
+      </div>
+	  
+     {% endblock %} 
+
+</body>
+{% block sidehref %}
+<script>
+  var username=document.getElementById("user").innerHTML;
+  var homeref="/users/"+username+"?token="+token;
+  var podsref="/users/"+username+"/pods?token="+token;
+  var customref="/users/"+username+"/custom?token="+token;
+  var packref="/users/"+username+"/packages?token="+token;
+  var logref="/users/"+username+"/logout?token="+token;
+  var deploysref="/users/"+username+"/pods/deployments?token="+token;
+  document.getElementById("side-deploys").setAttribute("href",deploysref)
+  document.getElementById("side-home").setAttribute("href",homeref)
+  document.getElementById("side-pods").setAttribute("href",podsref)
+  document.getElementById("side-custom").setAttribute("href",customref)
+  document.getElementById("side-packages").setAttribute("href",packref)
+  document.getElementById("top-logout").setAttribute("href",logref)
+{% block extra %}
+{% endblock %}
+
+</script>
+{% endblock %}
+</html>
+

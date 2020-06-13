@@ -1,0 +1,642 @@
+---
+swagger: "2.0"
+info:
+  description: "Gazebo_web_platform"
+  version: "1.0.0"
+  title: "Gazebo_web_platform"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:8000"
+basePath: "/"
+tags:
+- name: "user"
+  description: "Operations about use"
+schemes:
+- "http"
+paths:
+  /:
+    get:
+      tags:
+      - "default"
+      summary: "main page"
+      description: "main page"
+      operationId: "controllers.default_controller.mainpage"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "failed to access main page"
+
+  /users/register:
+    post:
+      tags:
+      - "user"
+      summary: "Create user"
+      description: "This can only be done by the logged in user."
+      operationId: "controllers.user_controller.create_user"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "user informations"
+        required: true
+        schema:
+          $ref: "#/definitions/User"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "user already exists"
+  /register:
+    get:
+      tags:
+      - "user"
+      summary: "Get register page"
+      description: "Interface for registration"
+      operationId: "controllers.user_controller.register"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "user already exists"
+  /users/login:
+    post:
+      tags:
+      - "user"
+      summary: "Logs user into the system"
+      description: ""
+      operationId: "controllers.user_controller.login_user"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "user informations"
+        required: true
+        schema: 
+         type: object
+         required:
+              - password
+              - username
+         properties:
+              password:
+                type: string
+              username:
+                type: string
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Invalid username/password supplied" 
+  /users/{username}/logout:
+    get:
+      tags:
+      - "user"
+      summary: "Logs out current logged in user session"
+      description: ""
+      operationId: "controllers.user_controller.logout_user"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "Username to logout"
+        required: true
+        type: "string"
+      responses:
+        default:
+          description: "successful operation"
+      x-tags:
+      - tag: "user"
+
+  /users/{username}/sim_package:
+    post:
+       summary: Uploads a file.
+       operationId: "controllers.user_controller.upload"
+       consumes:
+         - multipart/form-data
+       parameters:
+       - in: formData
+         name: upfile
+         type: file
+         description: The file to upload.
+       - name: "username"
+         in: "path"
+         description: "username"
+         required: true
+         type: "string" 
+       responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "gazebo cannot launch" 
+    delete:
+      tags:
+      - "user"
+      summary: "Delete upload files"
+      description: ""
+      operationId: "controllers.user_controller.remove_upload"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "Username "
+        required: true
+        type: "string"
+      responses:
+        default:
+          description: "successful operation"
+  /users/{username}/pods:
+    get:
+      tags:
+      - "user"
+      summary: "Get user's pods's status"
+      description: ""
+      operationId: "controllers.user_controller.get_user_pods"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+  /users/{username}/packages:
+    get:
+      tags:
+      - "user"
+      summary: "Get user's pods's status"
+      description: ""
+      operationId: "controllers.user_controller.get_user_packages"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+
+  /users/{username}/pods/deployments:
+    get:
+      tags:
+      - "user"
+      summary: "Get user by user name"
+      description: ""
+      operationId: "controllers.user_controller.get_deployment"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+
+  /users/{username}/pods/{pod}/deployment:
+    get:
+      tags:
+      - "user"
+      summary: "Get user by user name"
+      description: ""
+      operationId: "controllers.user_controller.get_deployment_topics"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      - name: "pod"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+
+  
+
+
+
+  /users/{username}/pods/{pod}/mac/:
+    get:
+      tags:
+      - "user"
+      summary: "Get user by user name"
+      description: ""
+      operationId: "controllers.user_controller.get_mac"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      - name: "pod"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+
+
+  /users/{username}/pods/{pod}/secret/:
+    get:
+      tags:
+      - "user"
+      summary: "Get secret for user and pod"
+      description: ""
+      operationId: "controllers.user_controller.get_secret"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      - name: "pod"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+
+
+  /users/{username}/files:
+    get:
+      tags:
+      - "user"
+      summary: "Get user by user name"
+      description: ""
+      operationId: "controllers.user_controller.get_files"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+  /users/{username}/custom:
+    get:
+      tags:
+      - "user"
+      summary: "Get user by user name"
+      description: ""
+      operationId: "controllers.user_controller.get_user_custom"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+  /users/{username}:
+    get:
+      tags:
+      - "user"
+      summary: "Get user by user name"
+      description: ""
+      operationId: "controllers.user_controller.get_user_by_name"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+      x-tags:
+      - tag: "user"
+
+  /users/{username}/download/{filename}:
+    get:
+      tags:
+      - "user"
+      summary: "Download package"
+      description: "This can only be done by the logged in user."
+      operationId: "controllers.user_controller.download"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "username"
+        required: true
+        type: "string"
+      - name: "filename"
+        in: "path"
+        description: "filename"
+        required: true
+        type: "string" 
+      responses:
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+
+
+
+  /users/{username}/time:
+    put:
+      tags:
+      - "user"
+      summary: "Updated gazebo"
+      description: "This can only be done by the logged in user."
+      operationId: "controllers.user_controller.update_time"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "name that need to be updated"
+        required: true
+        type: "string"
+      responses:
+        400:
+          description: "Invalid user supplied"
+        404:
+          description: "User not found"
+      x-tags:
+      - tag: "user" 
+ 
+  /users/{username}/pods/{pod}:
+    put:
+      tags:
+      - "user"
+      summary: "Build package"
+      description: "This can only be done by the logged in user."
+      operationId: "controllers.user_controller.build_package"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "username"
+        required: true
+        type: "string"
+      - name: "pod"
+        in: "path"
+        description: "pod"
+        required: true
+        type: "string"
+      responses:
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+
+    post:
+      tags:
+      - "user"
+      summary: "Start a pod"
+      description: ""
+      operationId: "controllers.user_controller.start_pod"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      - name: "pod"
+        in: "path"
+        description: "The pod tha will start "
+        required: true
+        type: "string"
+      - name: "password"
+        in: "body"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        schema:
+            type: object
+            required:
+              - password
+            properties:
+              password:
+                type: string  
+      responses:
+        200:
+          description: "successful operation"
+
+    delete:
+      tags:
+      - "user"
+      summary: "Start a pod"
+      description: ""
+      operationId: "controllers.user_controller.remove_pod"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      - name: "pod"
+        in: "path"
+        description: "The pod tha will start "
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+
+  /users/{username}/pods/{pod}/sim:
+    put:
+      tags:
+      - "user"
+      summary: "Updated gazebo sim"
+      description: "This can only be done by the logged in user."
+      operationId: "controllers.user_controller.run_gzweb"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "name that need to be updated"
+        required: true
+        type: "string"
+      - name: "pod"
+        in: "path"
+        description: "pod"
+        required: true
+        type: "string"
+      responses:
+        400:
+          description: "Invalid user supplied"
+        404:
+          description: "User not found"
+      x-tags:
+      - tag: "user"  
+    post:
+      tags:
+      - "user"
+      summary: "Launch Gazebo and packages in the pod"
+      description: "Start simulation with gazebo"
+      operationId: "controllers.user_controller.launch_gazebo"
+      produces:
+      - "application/xml"
+      - "application/json"
+      consumes:
+      - application/json
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "username"
+        required: true
+        type: "string"
+      - name: "pod"
+        in: "path"
+        description: "pod"
+        required: true
+        type: "string"
+      - name: "robot"
+        in: "body"
+        description: "the robot"
+        required: true
+        schema:
+           properties:
+            number:
+             type: string
+            map:
+             type: string
+            robots:
+             type: array
+             items:
+              $ref: "#/definitions/Robots"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "gazebo cannot launch"
+      x-tags:
+      - tag: "user"  
+
+
+
+definitions:
+  User:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      email:
+        type: "string"
+      password:
+        type: "string"
+    xml:
+      name: "User"
+
+
+  Robots:
+     type: "object"
+     properties:
+       robotname:
+         type: "string"
+       base:
+         type: "string"  
+       sensor:
+         type: "string"
+       pose_x:
+         type: "string"
+       pose_y:
+         type: "string"
+       pose_z:
+         type: "string"

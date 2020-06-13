@@ -1,0 +1,39 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: mongod
+  labels: 
+     app: local
+spec:
+  containers:
+    - name: mongo
+      image: mongo
+      ports:
+        - containerPort: 27017
+          protocol: TCP
+      volumeMounts:
+      - mountPath: "/data/db"
+        name: mypd
+        subPath: db
+  volumes:
+    - name: mypd
+      persistentVolumeClaim:
+        claimName: claimdata
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-service
+  labels:
+    name: mongo
+spec:
+  ports:
+  - port: 27017
+    targetPort: 27017
+  clusterIP: None
+  selector:
+    app: local
+
+
+  

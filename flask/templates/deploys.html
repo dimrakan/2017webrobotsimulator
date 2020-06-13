@@ -1,0 +1,230 @@
+        {% extends "home.html" %}
+
+        {% block control %}
+        <li ><a id="side-home" href="#" style="font-size:17px;">Home</a></li>
+        <li ><a id="side-pods" href="#" style="font-size:17px;">Simulation Environment</a></li>
+        <li><a id="side-custom" href="#" style="font-size:17px;">Custom Simulation</a></li>
+        <li ><a id="side-packages" href="#" style="font-size:17px;">Upload Package</a></li>
+        <li class="active"><a id="side-deploys" href="#" style="font-size:17px;">Deployments</a></li>
+
+        {% endblock %}
+
+	  {% block panel %}
+
+
+
+<div class="form-group  col-sm-9"><br>
+          <div class="row">
+          <h1 class="form-group " >Deployments</h1>
+           <div class="form-group col-sm-5"><br>
+            <label for="sel1">Select Simulation Environment:</label>
+            <select class="form-control" id="deploy_pod" value="None"onChange="conRos('{{username}}',deploy_pod.value);">
+             <option selected disabled hidden>Choose a Simulation Environment</option>
+             <option value="1">Simulation Environment 1</option>
+             <option value="2">Simulation Environment 2</option>
+             <option value="3">Simulation Environment 3</option>
+            </select>
+           </div>
+            <div class="form-group col-sm-7"><br><br><div id='info' ></div></div>
+          </div>
+          <div class="row">
+           <div class="form-group col-sm-4">
+              <h4 id='auth' style="display:none">Authenticating ....</h4>
+           </div></div>
+          <div class="row">
+           <div class="form-group col-sm-4">
+              <button id="btn-auth" class="btn btn-primary" style="display:none" onClick="getAuth();">Auth Info</button>
+           </div>
+           <div class="form-group col-sm-8">
+              <h4 id='auth-info' style="word-wrap:break-word;display:none;"></h4>
+           </div></div>
+          
+          <div class="row">
+           
+           <div class="form-group col-sm-4">
+            <h5 id="rosbridge" style="display:none;"></h5>
+           </div>
+           </div>
+           <div class="row">
+
+           <div class="form-group col-sm-4">
+            <a id="webvideoserver" href="" style="display:none;">Web Video Server</a></div>
+            </div> 
+           <div class="row">  
+            
+          <div class="form-group col-sm-4">
+            <a id="gzweb" href="" style="display:none;">Gzweb</a>   </div>
+            
+        </div>
+          <div class="row">
+           <div class="form-group col-sm-6">
+            <button id='tops' class="btn btn-primary " style="display:none;"" onclick="getTopics();">Topics</button>
+             <table id="TopicsTable" class="table table-striped table-bordered">
+             </div>
+            </table>
+
+           </div>
+           <div class="form-group col-sm-6">
+            <button id='sevs' class="btn btn-primary" style="display:none;"" onclick="getServices();">Services</button>
+            <table id="ServicesTable" class="table table-striped table-bordered">
+             </div>
+            </table> 
+           </div>
+          </div>
+        <div class="row">
+           </div>
+
+	  {% endblock %}
+ 
+
+{% block extra %}
+
+var ros  
+function conRos(username,pod){
+  if (pod==2) {port={{port}}+4;}
+  else if (pod==3) {port={{port}}+8;}
+  else if (pod==1){port={{port}};}
+
+  ros = new ROSLIB.Ros({
+    url : 'ws://83.212.96.15:'+port,
+  });
+   
+   document.getElementById('tops').style.display='none';
+   document.getElementById('sevs').style.display='none';
+   document.getElementById("rosbridge").style.display="none";
+   document.getElementById("webvideoserver").style.display="none";
+   document.getElementById("gzweb").style.display="none";
+   document.getElementById('btn-auth').style.display='none';
+   document.getElementById('auth-info').style.display='none';
+
+  ros.on('connection', function() {
+    console.log('Connected to websocket server.');
+    document.getElementById('auth').style.display="block";  
+    $.ajax({
+        type: "GET",
+        url: "/users/"+username+"/pods/"+pod+"/mac?token="+token,
+        contentType: "application/json",
+        beforeSend: function(request) {
+               },
+        success:function(data){
+        mac_auth=JSON.parse(data);
+        console.log(mac_auth);
+        ros.authenticate(mac_auth.mac,mac_auth.client,mac_auth.dest,mac_auth.rand,mac_auth.t,mac_auth.level,mac_auth.end)
+        document.getElementById('info').style.diplay='block';
+        document.getElementById('info').className='alert alert-success';
+        document.getElementById('info').innerHTML='Connected to websocket server.';
+        document.getElementById('tops').style.display='block';
+        document.getElementById('sevs').style.display='block';
+        document.getElementById("rosbridge").style.display="block";
+        document.getElementById("webvideoserver").style.display="block";
+        document.getElementById("gzweb").style.display="block";
+        document.getElementById('rosbridge').style.diplay='block';
+        document.getElementById('rosbridge').innerHTML='Rosbridge : '+port;
+        document.getElementById('gzweb').style.diplay='block';
+        document.getElementById('gzweb').setAttribute("href",'http://83.212.96.15:'+(port-2)+'/?username='+username+'&pod='+deploy_pod.value+'&token='+token);
+        document.getElementById('webvideoserver').style.diplay='block';
+        document.getElementById('webvideoserver').setAttribute("href",'http://83.212.96.15:'+(port+1)+'/');
+        document.getElementById('auth').style.display="none";
+        document.getElementById('btn-auth').style.display="block";
+
+      }
+  });
+
+    table = document.getElementById("TopicsTable");
+    nrows=table.rows.length
+    for (i=0;i<nrows;i++){
+     table.deleteRow(0);}  
+    table = document.getElementById("ServicesTable");
+    nrows=table.rows.length
+    for (i=0;i<nrows;i++){
+     table.deleteRow(0);} 
+  });
+
+  ros.on('error', function(error) {
+    console.log('Error connecting to websocket server: ', error);
+    document.getElementById('info').style.diplay='block';
+    document.getElementById('info').className='alert alert-danger';
+    document.getElementById('info').innerHTML='Error connecting to websocket server';
+    document.getElementById('tops').style.display='none';
+    document.getElementById('sevs').style.display='none';
+    document.getElementById("rosbridge").style.display="none";
+    document.getElementById("webvideoserver").style.display="none";
+    document.getElementById("gzweb").style.display="none";
+    document.getElementById("ServicesTable").style.display="none";
+    document.getElementById("TopicsTable").style.display="none";
+  });
+
+  ros.on('close', function() {
+    console.log('Connection to websocket server closed.');
+    document.getElementById('info').className='alert alert-danger';
+    document.getElementById('info').innerHTML='Connection to websocket server closed.';
+  });  
+  
+
+}
+
+  
+  function getTopics (){  
+  ros.getTopics(function(topics) {
+  var table = document.getElementById("TopicsTable");
+  console.log(topics)
+  nrows=table.rows.length
+  for (i=0;i<nrows;i++){
+    table.deleteRow(0);
+  }  
+  var header = table.createTHead();
+  var row = header.insertRow(0);
+  var cell = row.insertCell(0);
+  cell.innerHTML = "<b>Ros Topics</b>";
+  for (i=0;i<topics['topics'].length;i++){
+     row = table.insertRow(i+1);
+     cell1 = row.insertCell(0);
+     cell1.innerHTML = topics['topics'][i];  
+  };
+  
+  });
+  document.getElementById("TopicsTable").style.display="block";
+  };
+ 
+
+ function getServices (){  
+  
+  ros.getServices(function(services) {
+  console.log(services);  
+  var table = document.getElementById("ServicesTable");
+  
+  nrows=table.rows.length
+  for (i=0;i<nrows;i++){
+    table.deleteRow(0);
+  }  
+  var header = table.createTHead();
+  var row = header.insertRow(0);
+  var cell = row.insertCell(0);
+  cell.innerHTML = "<b>Ros Services</b>";
+  for (i=0;i<services.length;i++){
+     row = table.insertRow(i+1);
+     cell1 = row.insertCell(0);
+     cell1.innerHTML = services[i];  
+  };
+  
+  });
+  document.getElementById("ServicesTable").style.display="block";
+  };
+
+ function getAuth(){
+    document.getElementById('auth').style.display="block";
+    $.ajax({
+        type: "GET",
+        url: "/users/"+username+"/pods/"+deploy_pod.value+"/secret?token="+token,
+        contentType: "application/json",
+        beforeSend: function(request) {
+               },
+        success:function(data){
+        document.getElementById('auth-info').style.display='block';
+        document.getElementById('auth-info').innerHTML=data;
+        document.getElementById('auth').style.display="none";}
+ 
+       });
+};
+
+{% endblock%}

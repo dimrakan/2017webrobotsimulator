@@ -1,0 +1,45 @@
+
+root@pod1:/# rostopic info /robot/joint_states
+Type: sensor_msgs/JointState
+
+Publishers:
+ * /gazebo (http://10.32.0.11:39969/)
+
+Subscribers: None
+
+subscribed to [/robot/joint_states]
+WARNING: may be using simulated time
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00246s window: 100
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00317s window: 200
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00295s window: 300
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00301s window: 398
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00283s window: 500
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00277s window: 599
+^Caverage rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00285s window: 641
+
+
+root@pod1:/# rostopic bw /robot/joint_states
+subscribed to [/robot/joint_states]
+average: 13.85KB/s
+        mean: 0.14KB min: 0.14KB max: 0.14KB window: 96
+average: 13.98KB/s
+        mean: 0.14KB min: 0.14KB max: 0.14KB window: 100
+average: 14.04KB/s
+        mean: 0.14KB min: 0.14KB max: 0.14KB window: 100
+average: 14.00KB/s
+        mean: 0.14KB min: 0.14KB max: 0.14KB window: 100
+average: 13.94KB/s
+        mean: 0.14KB min: 0.14KB max: 0.14KB window: 100
+average: 14.07KB/s
+        mean: 0.14KB min: 0.14KB max: 0.14KB window: 100
+average: 13.94KB/s
+        mean: 0.14KB min: 0.14KB max: 0.14KB window: 100
+^Caverage: 8.87KB/s
+        mean: 0.14KB min: 0.14KB max: 0.14KB window: 100

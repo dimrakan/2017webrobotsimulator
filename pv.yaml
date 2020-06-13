@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /home/dimitris_rak/data/
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: claimdata
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ""
+  volumeName: data
+  resources:
+    requests:
+      storage: 1Gi
+

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Flat UI Login</title>
+ 
+  
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <script>var username='{{username}}'
+    var port_gzclient='{{port_gzclient}}'
+    var port_websocket=parseInt(port_gzclient, 10) + 1
+    var msg='{{msg}}'
+    
+    var token=window.location.search.substring(7,)
+    var status1='{{status1}}'
+    var status2='{{status2}}'
+    var status3='{{status3}}'
+    var out='{{out}}'
+    if (status1=='Error from server (NotFound): pods &#34;pod1&#34; not found'){
+     status1='Not found';}
+    if (status2=='Error from server (NotFound): pods &#34;pod2&#34; not found'){
+     status2='Not found';}
+    if (status3=='Error from server (NotFound): pods &#34;pod3&#34; not found'){
+     status3='Not found';}
+    //console.log(status1);
+  </script>
+    
+</head>
+
+<body>
+  
+  <div id="wrap">
+  <div id="blur">
+  <div id="regbar">
+  
+    <div id="navthing">
+      <h2 >Hi {{ username }} ,  Upload your package  or  Create your world to start your simulation. </h2>
+      <h1 id="thestatus1" style="font-size:15px;width:100px;display:inline;"></h1><h1 id="thestatus2" style="font-size:15px;width:100px;display:inline"></h1><h1 id="thestatus3" style="font-size:15px;width:100px;display:inline"> Pod3's status is Not found </h1>
+      <div id="qwe">
+       <div class=styled-select id="upload-box">
+         <p class=selrob>Upload my package(.zip):</p>
+       <div class=styled-select id="dynamicInput">
+       </div> 
+        
+      <form id="upload" action = "" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" size="60" name = "file" id="file" class="inputfile" onclick="show();"/>
+         <label for="file">Choose a file</label>
+         <input type = "submit" id="mit"/>
+      </form>
+      <button id="build" action = "" method = "POST" >
+         <input type="button" id="sub" value="Build"/>
+      </form>
+      <button id="lgz" type=button >Start simulation</button> 
+      
+      </div>
+      
+     </div>
+     
+   </div>
+ </div>
+ 
+ <input id="logout" type=button value="Logout"</>
+ 
+ <input type="button"  id="add_pod" value="Start Pod">
+ <input type="button" id="rm_pod" value="Delete Pod"> 
+ 
+ <select id="pods" style="position:absolute;width:75px;height:38px;font-size:20px;"">
+  <option value="1" style="font-size:20px;">Pod1</option>
+  <option value="2" style="font-size:20px;">Pod2</option>
+  <option value="3" style="font-size:20px;">Pod3</option>
+</select>
+
+</div>
+ <div id="robot_form">
+ <fieldset >
+             <form name="robotform"  onSubmit="return false;">
+               <div id="labels"> 
+                <label >Map</label>
+                <label>Number</label>
+                <label id="lb_rb_nm">Robotname1</label>
+                <label >Base</label>
+                <label>Sensor</label>
+                <label>Pose_x</label>
+                <label>Pose_y</label>
+                <label>Pose_z</label>
+               </div>
+               <div id="boxess">
+                <select id="map">
+                  <option value="empty">Empty</option>
+                  <option value="playground">Playground</option>
+                </select> 
+                
+                <select id="number">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option> 
+                </select>
+               
+                
+                <input type="text" name="robotname" value="robot"> 
+                
+                <select id="base">
+                  <option value="kobuki">Kobuki</option>
+                  <option value="create">Create</option>
+                </select>
+                
+                <select id="sensor">
+                  <option value="asus_xtion_pro">Asus_xtion_pro</option>
+                  <option value="astra">Astra</option>
+                  <option value="kinect">Kinect</option>
+                </select>
+                
+                
+                <input type="number" name="pose_x"  value="0">
+                
+                <input type="number" name="pose_y" value="0">
+                
+                <input type="number"" name="pose_z" value="0">
+              </div>  
+               <div id="rbtns">
+                <input type="button" id="addbtn" value="Add robot"/>
+                <input type="button" id="rmbtn" value="Remove robot"/>
+                <input type="reset" id="resetworld" value="Reset world"/>
+                <input type="reset"  value="Reset robot values"/>
+                <input type="submit" id="robotbtn" value="Launch multi_robot"/>
+               </div>
+             </form>
+           </fieldset>
+           <div id="robotlist"></div>
+ </div>
+ </div>
+ <div id="buildout" class="boxed">
+  Output from build.
+ </div>
+ <!<input type="button" id="gzweb" value="Start Gzweb"/>
+ <div id=termload>
+      <p style="font-size:40px;padding:10px;"></p>
+ </div>
+  <script src="{{url_for('static', filename='js/jquery.js')}}"></script>
+  <script src="{{url_for('static', filename='js/index.js')}}"></script>
+  <script>if (msg !='') {alert(msg);}
+   //else {msg=getParameterByName('msg');}
+   Lfiles= '["", ""]'
+   function addInput(divName,Lfiles) {
+    //var Lfiles= '{{ Lfiles|tojson|safe }}'
+    if (Lfiles!= '["", ""]') {
+     console.log(Lfiles.length) 
+     //var kapa=Lfiles.split("[")[1].split("]")[0]
+     //var len=kapa.split(",").length
+     var len=Lfiles.length
+     //var files=new Array
+     //for (i = 0; i < len; i++) {
+     //files[i]=kapa.split(",")[i].split('"')[1].split('"')[0]
+     //} 
+     var newDiv = document.createElement('div');
+     var selectHTML = "";
+     selectHTML="<select class='dropdown btn btn-primary' style='block:inline;padding: 7px 5px;margin: 5.5px 0;font-size: 18px;border-radius:5px;border:1px solid black;'>";
+     for(i = 0; i < len; i = i + 1) {
+         selectHTML += "<option value='" + Lfiles[i] + "'>" + Lfiles[i] + "</option>";
+     }
+     selectHTML += "</select>";
+     newDiv.innerHTML = selectHTML;
+     document.getElementById(divName).appendChild(newDiv);
+    }
+   } 
+   document.getElementById("sub").disabled = true; 
+   document.getElementById("lgz").disabled = true;
+   if (msg=="File successfully uploaded"){
+      document.getElementById("sub").disabled = false;
+   }
+   if (msg=="Package has been created"){
+      document.getElementById("lgz").disabled = false;
+   }
+   document.getElementById("mit").disabled = true;  
+   
+  // if (status=="Not Ready"){
+  //    document.getElementById("thestatus").innerHTML="Environment not ready at the moment,refresh in a few minutes pls!";
+  //    document.getElementById("thestatus").style.color="red";
+  //    document.getElementById("robotbtn").disabled= true;
+//}
+  // else if (status=="Ready"){
+  //    document.getElementById("thestatus").innerHTML="Environment ready to use,choose your robots!";
+  //    document.getElementById("thestatus").style.color="#00ff00";} 
+   //addInput('dynamicInput');
+   document.getElementById('upload').action="/user/{{ username }}/upload?token="+token
+   document.getElementById('build').action="/user/{{ username }}/"+pod+"?token="+token
+  // if (msg=="File successfully uploaded") {
+  //  data1="http://"+hostname+":8000/user/"+username+"?token="+token+"&msg=Build Done"; 
+    //alert("Now?");
+  //  window.location.href=data1;
+    
+ //  } 
+   if (out!="None"){
+      console.log(out);
+   } 
+
+
+ </script>
+</body>
+</html>

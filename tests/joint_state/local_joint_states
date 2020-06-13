@@ -1,0 +1,50 @@
+[INFO] [1520160619.048753]: /cloudsub_60085_1520160584027 Time from previous message 0.0103189945221 
+[INFO] [1520160619.061138]: /cloudsub_60085_1520160584027 Message type sensor_msgs/JointState 
+[INFO] [1520160619.061506]: /cloudsub_60085_1520160584027 Time from previous message 0.0124728679657 
+[INFO] [1520160619.067860]: /cloudsub_60085_1520160584027 Message type sensor_msgs/JointState 
+[INFO] [1520160619.068289]: /cloudsub_60085_1520160584027 Time from previous message 0.00648498535156 
+[INFO] [1520160619.077723]: /cloudsub_60085_1520160584027 Message type sensor_msgs/JointState 
+[INFO] [1520160619.078131]: /cloudsub_60085_1520160584027 Time from previous message 0.00946092605591 
+[INFO] [1520160619.087269]: /cloudsub_60085_1520160584027 Message type sensor_msgs/JointState 
+[INFO] [1520160619.087653]: /cloudsub_60085_1520160584027 Time from previous message 0.00911998748779 
+[INFO] [1520160619.097181]: /cloudsub_60085_1520160584027 Message type sensor_msgs/JointState 
+[INFO] [1520160619.097634]: /cloudsub_60085_1520160584027 Time from previous message 0.00953388214111 
+[INFO] [1520160619.107276]: /cloudsub_60085_1520160584027 Message type sensor_msgs/JointState 
+[INFO] [1520160619.107726]: /cloudsub_60085_1520160584027 Time from previous message 0.00967717170715 
+[INFO] [1520160619.117255]: /cloudsub_60085_1520160584027 Message type sensor_msgs/JointState 
+[INFO] [1520160619.117658]: /cloudsub_60085_1520160584027 Time from previous message 0.00964903831482 
+
+
+
+test@ubuntu4:~$ rostopic hz /local/robot/joint_states 
+subscribed to [/local/robot/joint_states]
+average rate: 98.797
+	min: 0.002s max: 0.025s std dev: 0.00301s window: 98
+average rate: 99.489
+	min: 0.000s max: 0.025s std dev: 0.00298s window: 198
+average rate: 99.831
+	min: 0.000s max: 0.026s std dev: 0.00304s window: 299
+average rate: 99.856
+	min: 0.000s max: 0.026s std dev: 0.00292s window: 399
+average rate: 99.763
+	min: 0.000s max: 0.026s std dev: 0.00282s window: 498
+^Caverage rate: 99.805
+	min: 0.000s max: 0.026s std dev: 0.00282s window: 539
+
+	
+test@ubuntu4:~$ rostopic bw /local/robot/joint_states 
+subscribed to [/local/robot/joint_states]
+average: 13.91KB/s
+	mean: 0.14KB min: 0.14KB max: 0.14KB window: 97
+average: 13.80KB/s
+	mean: 0.14KB min: 0.14KB max: 0.14KB window: 100
+average: 14.04KB/s
+	mean: 0.14KB min: 0.14KB max: 0.14KB window: 100
+average: 13.45KB/s
+	mean: 0.14KB min: 0.14KB max: 0.14KB window: 100
+average: 14.19KB/s
+	mean: 0.14KB min: 0.14KB max: 0.14KB window: 100
+average: 13.86KB/s
+	mean: 0.14KB min: 0.14KB max: 0.14KB window: 100
+^Caverage: 12.61KB/s
+	mean: 0.14KB min: 0.14KB max: 0.14KB window: 100

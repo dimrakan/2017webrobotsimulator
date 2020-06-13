@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="roscloudbridge" name="roscloudbridge" type="bridge.py" output="screen">
+      <rosparam command="load" file="$(find roscloudbridge)/config/try.yaml" />
+  </node>
+
+</launch>

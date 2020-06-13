@@ -1,0 +1,53 @@
+
+root@pod1:/# rostopic info /robot/odom
+Type: nav_msgs/Odometry
+
+Publishers:
+ * /gazebo (http://10.32.0.11:39969/)
+
+Subscribers: None
+
+root@pod1:/# rostopic hz /robot/odom
+subscribed to [/robot/odom]
+WARNING: may be using simulated time
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00357s window: 95
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00305s window: 195
+average rate: 100.000
+        min: 0.000s max: 0.050s std dev: 0.00976s window: 291
+average rate: 100.000
+        min: 0.000s max: 0.050s std dev: 0.01207s window: 392
+average rate: 100.000
+        min: 0.000s max: 0.050s std dev: 0.01325s window: 491
+average rate: 100.000
+        min: 0.000s max: 0.050s std dev: 0.01401s window: 592
+average rate: 99.855
+        min: 0.000s max: 0.050s std dev: 0.01452s window: 689
+^Caverage rate: 100.000
+        min: 0.000s max: 0.050s std dev: 0.01465s window: 725
+
+root@pod1:/# rostopic bw /robot/odom
+subscribed to [/robot/odom]
+average: 74.19KB/s
+        mean: 0.74KB min: 0.74KB max: 0.74KB window: 97
+average: 73.34KB/s
+        mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+average: 72.98KB/s
+        mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+average: 75.86KB/s
+        mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+average: 75.74KB/s
+        mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+average: 75.67KB/s
+        mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+average: 70.09KB/s
+        mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+average: 74.23KB/s
+        mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+average: 73.15KB/s
+        mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+average: 74.24KB/s
+        mean: 0.74KB min: 0.74KB max: 0.74KB window: 100
+^Caverage: 45.38KB/s
+        mean: 0.74KB min: 0.74KB max: 0.74KB window: 100

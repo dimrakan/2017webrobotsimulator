@@ -1,0 +1,77 @@
+[INFO] [1520262802.817757]: /cloudsub_71727_1520262708677 Time from previous message 0.250217199326 
+[INFO] [1520262803.049038]: /cloudsub_71727_1520262708677 Message type sensor_msgs/LaserScan 
+[INFO] [1520262803.049578]: /cloudsub_71727_1520262708677 Time from previous message 0.23150396347 
+[INFO] [1520262803.324504]: /cloudsub_71727_1520262708677 Message type sensor_msgs/LaserScan 
+[INFO] [1520262803.324946]: /cloudsub_71727_1520262708677 Time from previous message 0.275078058243 
+[INFO] [1520262803.558402]: /cloudsub_71727_1520262708677 Message type sensor_msgs/LaserScan 
+[INFO] [1520262803.558766]: /cloudsub_71727_1520262708677 Time from previous message 0.233500003815 
+[INFO] [1520262803.761515]: /cloudsub_71727_1520262708677 Message type sensor_msgs/LaserScan 
+[INFO] [1520262803.762147]: /cloudsub_71727_1520262708677 Time from previous message 0.203043937683 
+
+
+test@ubuntu2:~/Desktop$ rostopic hz /local/scan 
+subscribed to [/local/scan]
+average rate: 3.725
+	min: 0.122s max: 0.391s std dev: 0.11132s window: 4
+average rate: 4.395
+	min: 0.122s max: 0.391s std dev: 0.08187s window: 9
+average rate: 4.558
+	min: 0.122s max: 0.391s std dev: 0.06696s window: 14
+average rate: 4.419
+	min: 0.122s max: 0.391s std dev: 0.06344s window: 17
+average rate: 4.155
+	min: 0.122s max: 0.391s std dev: 0.06911s window: 21
+average rate: 4.095
+	min: 0.122s max: 0.391s std dev: 0.06528s window: 25
+average rate: 4.014
+	min: 0.122s max: 0.391s std dev: 0.06321s window: 28
+average rate: 3.976
+	min: 0.122s max: 0.391s std dev: 0.06162s window: 31
+average rate: 3.805
+	min: 0.122s max: 0.437s std dev: 0.07029s window: 34
+average rate: 3.759
+	min: 0.122s max: 0.437s std dev: 0.07102s window: 38
+average rate: 3.802
+	min: 0.122s max: 0.437s std dev: 0.06819s window: 42
+average rate: 3.798
+	min: 0.122s max: 0.437s std dev: 0.06541s window: 46
+average rate: 3.786
+	min: 0.122s max: 0.437s std dev: 0.06417s window: 49
+average rate: 3.788
+	min: 0.122s max: 0.437s std dev: 0.06445s window: 53
+average rate: 3.843
+	min: 0.122s max: 0.437s std dev: 0.06402s window: 58
+average rate: 3.853
+	min: 0.122s max: 0.437s std dev: 0.06346s window: 62
+
+
+
+	test@ubuntu2:~/Desktop$ rostopic bw /local/scan 
+subscribed to [/local/scan]
+average: 13.53KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 4
+average: 10.35KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 7
+average: 9.46KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 10
+average: 9.74KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 14
+average: 9.35KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 17
+average: 9.10KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 20
+average: 9.31KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 24
+average: 9.12KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 27
+average: 8.98KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 30
+average: 9.14KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 34
+average: 9.27KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 38
+average: 9.15KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 41
+average: 9.05KB/s
+	mean: 2.63KB min: 2.63KB max: 2.63KB window: 44
+average: 9.35KB/s

@@ -1,0 +1,61 @@
+[INFO] [1520152339.010669]: /cloudsub_96398_1520152293048 Time from previous message 0.00796508789062 
+[INFO] [1520152339.021838]: /cloudsub_96398_1520152293048 Message type sensor_msgs/Imu 
+[INFO] [1520152339.022183]: /cloudsub_96398_1520152293048 Time from previous message 0.0111980438232 
+[INFO] [1520152339.030003]: /cloudsub_96398_1520152293048 Message type sensor_msgs/Imu 
+[INFO] [1520152339.030515]: /cloudsub_96398_1520152293048 Time from previous message 0.00793409347534 
+[INFO] [1520152339.040429]: /cloudsub_96398_1520152293048 Message type sensor_msgs/Imu 
+[INFO] [1520152339.040773]: /cloudsub_96398_1520152293048 Time from previous message 0.00999903678894 
+[INFO] [1520152339.049771]: /cloudsub_96398_1520152293048 Message type sensor_msgs/Imu 
+[INFO] [1520152339.050229]: /cloudsub_96398_1520152293048 Time from previous message 0.00919413566589 
+[INFO] [1520152339.060233]: /cloudsub_96398_1520152293048 Message type sensor_msgs/Imu 
+[INFO] [1520152339.060752]: /cloudsub_96398_1520152293048 Time from previous message 0.010195016861 
+[INFO] [1520152339.069516]: /cloudsub_96398_1520152293048 Message type sensor_msgs/Imu 
+[INFO] [1520152339.071934]: /cloudsub_96398_1520152293048 Time from previous message 0.0108580589294 
+[INFO] [1520152339.079745]: /cloudsub_96398_1520152293048 Message type sensor_msgs/Imu 
+[INFO] [1520152339.080197]: /cloudsub_96398_1520152293048 Time from previous message 0.00796294212341 
+[INFO] [1520152339.089436]: /cloudsub_96398_1520152293048 Message type sensor_msgs/Imu 
+[INFO] [1520152339.089852]: /cloudsub_96398_1520152293048 Time from previous message 0.00938200950623 
+[INFO] [1520152339.099999]: /cloudsub_96398_1520152293048 Message type sensor_msgs/Imu 
+[INFO] [1520152339.100551]: /cloudsub_96398_1520152293048 Time from previous message 0.0102350711823 
+[INFO] [1520152339.109684]: /cloudsub_96398_1520152293048 Message type sensor_msgs/Imu 
+[INFO] [1520152339.110158]: /cloudsub_96398_1520152293048 Time from previous message 0.00925302505493 
+
+
+test@ubuntu4:~$ rostopic bw /local/robot/mobile_base/sensors/imu_data 
+subscribed to [/local/robot/mobile_base/sensors/imu_data]
+average: 33.21KB/s
+	mean: 0.33KB min: 0.33KB max: 0.33KB window: 99
+average: 32.82KB/s
+	mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+average: 33.41KB/s
+	mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+average: 31.99KB/s
+	mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+average: 33.01KB/s
+	mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+average: 32.92KB/s
+	mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+average: 32.81KB/s
+	mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+^Caverage: 29.54KB/s
+	mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+
+
+test@ubuntu4:~$ rostopic hz /local/robot/mobile_base/sensors/imu_data 
+subscribed to [/local/robot/mobile_base/sensors/imu_data]
+average rate: 99.406
+	min: 0.001s max: 0.029s std dev: 0.00374s window: 95
+average rate: 98.815
+	min: 0.001s max: 0.052s std dev: 0.00446s window: 194
+average rate: 99.513
+	min: 0.001s max: 0.052s std dev: 0.00387s window: 295
+average rate: 99.477
+	min: 0.001s max: 0.052s std dev: 0.00355s window: 394
+average rate: 99.421
+	min: 0.000s max: 0.052s std dev: 0.00380s window: 493
+average rate: 99.541
+	min: 0.000s max: 0.052s std dev: 0.00412s window: 594
+average rate: 99.658
+	min: 0.000s max: 0.052s std dev: 0.00393s window: 694
+^Caverage rate: 99.702
+	min: 0.000s max: 0.052s std dev: 0.00388s window: 739	

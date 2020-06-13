@@ -1,0 +1,49 @@
+root@pod1:/# rostopic info /robot/mobile_base/sensors/imu_data
+Type: sensor_msgs/Imu
+
+Publishers:
+ * /gazebo (http://10.32.0.11:39969/)
+
+Subscribers: None
+
+
+root@pod1:/# rostopic hz /robot/mobile_base/sensors/imu_data
+subscribed to [/robot/mobile_base/sensors/imu_data]
+WARNING: may be using simulated time
+average rate: 98.980
+        min: 0.000s max: 0.020s std dev: 0.00393s window: 98
+average rate: 99.492
+        min: 0.000s max: 0.020s std dev: 0.00385s window: 197
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00427s window: 297
+average rate: 99.748
+        min: 0.000s max: 0.020s std dev: 0.00435s window: 397
+average rate: 99.798
+        min: 0.000s max: 0.020s std dev: 0.00433s window: 496
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00449s window: 596
+average rate: 99.856
+        min: 0.000s max: 0.020s std dev: 0.00448s window: 695
+average rate: 99.873
+        min: 0.000s max: 0.020s std dev: 0.00468s window: 790
+^Caverage rate: 99.880
+        min: 0.000s max: 0.030s std dev: 0.00466s window: 833
+
+root@pod1:/# rostopic bw /robot/mobile_base/sensors/imu_data
+subscribed to [/robot/mobile_base/sensors/imu_data]
+average: 33.20KB/s
+        mean: 0.33KB min: 0.33KB max: 0.33KB window: 96
+average: 33.27KB/s
+        mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+average: 32.84KB/s
+        mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+average: 33.15KB/s
+        mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+average: 33.25KB/s
+        mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+average: 33.20KB/s
+        mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+average: 32.91KB/s
+        mean: 0.33KB min: 0.33KB max: 0.33KB window: 100
+^Caverage: 29.08KB/s
+        mean: 0.33KB min: 0.33KB max: 0.33KB window: 100

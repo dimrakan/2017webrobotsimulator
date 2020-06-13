@@ -1,0 +1,58 @@
+[INFO] [1520150617.854153]: /cloudsub_125588_1520150552465 Time from previous message 0.00910592079163 
+[INFO] [1520150617.864576]: /cloudsub_125588_1520150552465 Message type rosgraph_msgs/Clock 
+[INFO] [1520150617.865055]: /cloudsub_125588_1520150552465 Time from previous message 0.0105309486389 
+[INFO] [1520150617.874323]: /cloudsub_125588_1520150552465 Message type rosgraph_msgs/Clock 
+[INFO] [1520150617.874784]: /cloudsub_125588_1520150552465 Time from previous message 0.00938010215759 
+[INFO] [1520150617.884657]: /cloudsub_125588_1520150552465 Message type rosgraph_msgs/Clock 
+[INFO] [1520150617.885133]: /cloudsub_125588_1520150552465 Time from previous message 0.0100071430206 
+[INFO] [1520150617.896863]: /cloudsub_125588_1520150552465 Message type rosgraph_msgs/Clock 
+[INFO] [1520150617.897200]: /cloudsub_125588_1520150552465 Time from previous message 0.0117220878601 
+[INFO] [1520150617.904988]: /cloudsub_125588_1520150552465 Message type rosgraph_msgs/Clock 
+[INFO] [1520150617.905382]: /cloudsub_125588_1520150552465 Time from previous message 0.00792503356934 
+[INFO] [1520150617.915444]: /cloudsub_125588_1520150552465 Message type rosgraph_msgs/Clock 
+[INFO] [1520150617.915892]: /cloudsub_125588_1520150552465 Time from previous message 0.010311126709 
+[INFO] [1520150617.925442]: /cloudsub_125588_1520150552465 Message type rosgraph_msgs/Clock 
+[INFO] [1520150617.925711]: /cloudsub_125588_1520150552465 Time from previous message 0.0095648765564 
+[INFO] [1520150617.934025]: /cloudsub_125588_1520150552465 Message type rosgraph_msgs/Clock 
+[INFO] [1520150617.934279]: /cloudsub_125588_1520150552465 Time from previous message 0.00839996337891 
+[INFO] [1520150617.944674]: /cloudsub_125588_1520150552465 Message type rosgraph_msgs/Clock 
+[INFO] [1520150617.945043]: /cloudsub_125588_1520150552465 Time from previous message 0.0105648040771 
+[INFO] [1520150617.955037]: /cloudsub_125588_1520150552465 Message type rosgraph_msgs/Clock 
+[INFO] [1520150617.955414]: /cloudsub_125588_1520150552465 Time from previous message 0.0101549625397 
+
+test@ubuntu4:~$ rostopic bw /local/clock 
+subscribed to [/local/clock]
+average: 804.64B/s
+	mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 767.00B/s
+	mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 804.49B/s
+	mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 819.36B/s
+	mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 805.02B/s
+	mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 806.16B/s
+	mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 803.56B/s
+	mean: 8.00B min: 8.00B max: 8.00B window: 100
+^Caverage: 692.78B/s
+	mean: 8.00B min: 8.00B max: 8.00B window: 
+
+	
+test@ubuntu4:~$ rostopic hz /local/clock 
+subscribed to [/local/clock]
+average rate: 95.802
+	min: 0.002s max: 0.038s std dev: 0.00480s window: 91
+average rate: 98.464
+	min: 0.002s max: 0.038s std dev: 0.00373s window: 192
+average rate: 98.882
+	min: 0.002s max: 0.038s std dev: 0.00323s window: 292
+average rate: 98.958
+	min: 0.000s max: 0.038s std dev: 0.00315s window: 391
+average rate: 99.196
+	min: 0.000s max: 0.038s std dev: 0.00302s window: 491
+average rate: 99.147
+	min: 0.000s max: 0.038s std dev: 0.00310s window: 590
+
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,47 @@
+root@pod1:/# rostopic info /robot/camera/depth/points
+Type: sensor_msgs/PointCloud2
+
+Publishers:
+ * /gazebo (http://10.32.0.11:39969/)
+
+Subscribers: None
+
+root@pod1:/# rostopic hz /robot/camera/depth/points
+subscribed to [/robot/camera/depth/points]
+WARNING: may be using simulated time
+average rate: 3.226
+        min: 0.310s max: 0.310s std dev: 0.00000s window: 2
+average rate: 2.655
+        min: 0.310s max: 0.420s std dev: 0.04784s window: 4
+average rate: 3.265
+        min: 0.190s max: 0.460s std dev: 0.10185s window: 9
+average rate: 3.096
+        min: 0.190s max: 0.470s std dev: 0.10345s window: 11
+average rate: 3.002
+        min: 0.190s max: 0.470s std dev: 0.09359s window: 14
+average rate: 3.189
+        min: 0.140s max: 0.470s std dev: 0.10232s window: 18
+average rate: 3.349
+        min: 0.140s max: 0.470s std dev: 0.09756s window: 22
+average rate: 3.243
+        min: 0.140s max: 0.510s std dev: 0.10156s window: 25
+^Caverage rate: 3.298
+        min: 0.140s max: 0.510s std dev: 0.10263s window: 26
+
+
+root@pod1:/# rostopic bw /robot/camera/depth/points
+subscribed to [/robot/camera/depth/points]
+average: 38.16MB/s
+        mean: 9.83MB min: 9.83MB max: 9.83MB window: 2
+average: 32.03MB/s
+        mean: 9.83MB min: 9.83MB max: 9.83MB window: 5
+average: 34.88MB/s
+        mean: 9.83MB min: 9.83MB max: 9.83MB window: 9
+average: 33.34MB/s
+        mean: 9.83MB min: 9.83MB max: 9.83MB window: 12
+average: 32.48MB/s
+        mean: 9.83MB min: 9.83MB max: 9.83MB window: 15
+average: 31.94MB/s
+        mean: 9.83MB min: 9.83MB max: 9.83MB window: 18
+^Caverage: 31.45MB/s
+        mean: 9.83MB min: 9.83MB max: 9.83MB window: 19

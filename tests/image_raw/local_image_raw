@@ -1,0 +1,55 @@
+[INFO] [1520161008.957431]: /cloudsub_84298_1520160997727 Time from previous message 1.03127098083
+[INFO] [1520161009.994492]: /cloudsub_84298_1520160997727 I heard a message of sensor_msgs/Image
+[INFO] [1520161009.995026]: /cloudsub_84298_1520160997727 Time from previous message 1.03709816933
+[INFO] [1520161011.036104]: /cloudsub_84298_1520160997727 I heard a message of sensor_msgs/Image
+[INFO] [1520161011.036638]: /cloudsub_84298_1520160997727 Time from previous message 1.04116988182
+[INFO] [1520161012.074353]: /cloudsub_84298_1520160997727 I heard a message of sensor_msgs/Image
+[INFO] [1520161012.074950]: /cloudsub_84298_1520160997727 Time from previous message 1.03781890869
+[INFO] [1520161013.114569]: /cloudsub_84298_1520160997727 I heard a message of sensor_msgs/Image
+[INFO] [1520161013.115015]: /cloudsub_84298_1520160997727 Time from previous message 1.03957509995
+[INFO] [1520161014.170543]: /cloudsub_84298_1520160997727 I heard a message of sensor_msgs/Image
+[INFO] [1520161014.171063]: /cloudsub_84298_1520160997727 Time from previous message 1.05566096306
+[INFO] [1520161015.243495]: /cloudsub_84298_1520160997727 I heard a message of sensor_msgs/Image
+[INFO] [1520161015.243918]: /cloudsub_84298_1520160997727 Time from previous message 1.0724799633
+[INFO] [1520161016.295601]: /cloudsub_84298_1520160997727 I heard a message of sensor_msgs/Image
+[INFO] [1520161016.296621]: /cloudsub_84298_1520160997727 Time from previous message 1.05194592476
+[INFO] [1520161017.339368]: /cloudsub_84298_1520160997727 I heard a message of sensor_msgs/Image
+[INFO] [1520161017.340048]: /cloudsub_84298_1520160997727 Time from previous message 1.0425028801
+[INFO] [1520161018.387917]: /cloudsub_84298_1520160997727 I heard a message of sensor_msgs/Image
+[INFO] [1520161018.388440]: /cloudsub_84298_1520160997727 Time from previous message 1.04790306091
+
+
+test@ubuntu4:~$ rostopic hz /local/robot/camera/rgb/image_raw 
+subscribed to [/local/robot/camera/rgb/image_raw]
+average rate: 1.065
+	min: 0.301s max: 1.435s std dev: 0.40729s window: 5
+average rate: 1.049
+	min: 0.301s max: 1.435s std dev: 0.36543s window: 6
+average rate: 1.038
+	min: 0.301s max: 1.435s std dev: 0.33433s window: 7
+average rate: 0.977
+	min: 0.301s max: 1.435s std dev: 0.34299s window: 8
+average rate: 1.026
+	min: 0.301s max: 1.435s std dev: 0.34582s window: 9
+average rate: 1.022
+	min: 0.301s max: 1.435s std dev: 0.32622s window: 10
+average rate: 1.018
+	min: 0.301s max: 1.435s std dev: 0.30964s window: 11
+
+
+
+
+test@ubuntu4:~$ rostopic bw /local/robot/camera/rgb/image_raw 
+subscribed to [/local/robot/camera/rgb/image_raw]
+average: 995.91KB/s
+	mean: 921.68KB min: 921.68KB max: 921.68KB window: 2
+average: 969.50KB/s
+	mean: 921.68KB min: 921.68KB max: 921.68KB window: 3
+average: 956.85KB/s
+	mean: 921.68KB min: 921.68KB max: 921.68KB window: 4
+average: 949.56KB/s
+	mean: 921.68KB min: 921.68KB max: 921.68KB window: 5
+average: 944.61KB/s
+	mean: 921.68KB min: 921.68KB max: 921.68KB window: 6
+average: 941.10KB/s
+	mean: 921.68KB min: 921.68KB max: 921.68KB window: 7

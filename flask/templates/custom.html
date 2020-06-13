@@ -1,0 +1,148 @@
+      {% extends "home.html" %}
+
+          {% block control %}
+         <li ><a id="side-home" href="#" style="font-size:17px;">Home</a></li>
+        <li ><a id="side-pods" href="#" style="font-size:17px;">Simulation Environment</a></li>
+        <li class="active"><a id="side-custom" href="#" style="font-size:17px;">Custom Simulation</a></li>
+        <li ><a id="side-packages" href="#" style="font-size:17px;">Upload Package</a></li>
+        <li ><a id="side-deploys" href="#" style="font-size:17px;">Deployments</a></li>
+        {% endblock %}
+
+          {% block panel %}
+
+       <div class="row">  
+	  <h1 class="form-group " >Create your simulation</h1><div class="form-group col-sm-4"><br>
+  <label for="custom_pods">Select Simulation Environment:</label>
+  <select class="form-control" id="custom_pods" onChange="sel2pod();">
+    <option selected disabled hidden>Choose a Simulation Environment</option>
+    <option value="1">Simulation Environment 1</option>
+    <option value="2">Simulation Environment 2</option>
+    <option value="3">Simulation Environment 3</option>
+   </select>
+</div></div>
+	  <div id='custom-form' class="row" style="display:none;">
+	   
+	<div class="col-sm-6"> 
+       <h3>Select Map and Robots</h3>	
+	   <form class="form-horizontal" onSubmit="return false;">
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="map">Map:</label>
+      <div class="col-sm-8">
+        <select class="form-control" id="map">
+            <option value="empty">Empty</option>
+            <option value="playground">Playground</option>
+            <option value="willowgarage">Willow Garage</option>
+        </select> 
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-4" for="number">Number:</label>
+      <div class="col-sm-8">
+        <select class="form-control" id="number">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select> 
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-4" for="robotname" id="lb_rb_nm" >Robot's Name:</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="robotname" value="robot" name="robotname">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-4" for="base">Base:</label>
+      <div class="col-sm-8">
+        <select class="form-control" id="base" onchange="change_base();">
+            <option value="kobuki">Kobuki</option>
+            <option value="create" disabled>Create</option>
+        </select>
+      </div>
+	</div>  
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="slam">Slam:</label>
+      <div class="col-sm-8">
+        <select class="form-control" id="slam" >
+            <option value="gmapping">Gmapping</option>
+        </select>
+      </div>
+        </div>
+	<div class="form-group">
+      <label class="control-label col-sm-4" for="a3d_sensor">Camera Sensor:</label>
+      <div class="col-sm-8">
+        <select class="form-control" id="a3d_sensor">
+            <option value="none">None</option>
+            <option value="asus_xtion_pro">Asus_xtion_pro</option>
+            <option value="astra" id="astra_sensor">Astra</option>
+            <option value="kinect">Kinect</option>
+        </select>
+      </div>
+	</div>
+ <div class="form-group">
+      <label class="control-label col-sm-4" for="lidar_sensor">Laser Sensor:</label>
+      <div class="col-sm-8">
+        <select class="form-control" id="lidar_sensor">
+            <option value="none">None</option>
+            <option value="hokuyo">Hokuyo</option>
+        </select>
+      </div>
+        </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="pose_x" >Pose x:</label>
+      <div class="col-sm-8">
+        <input type="number" class="form-control" value="0" min="0" name="pose_x" id="pose_x">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="pose_y" >Pose y:</label>
+      <div class="col-sm-8">
+        <input type="number" class="form-control" value="0" min="0" name="pose_y" id="pose_y">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="pose_z" >Pose z:</label>
+      <div class="col-sm-8">
+        <input type="number" class="form-control" value="0" min="0" name="pose_z" id="pose_z">
+      </div>
+    </div>	
+    
+    <div class="form-group">        
+      <div class="col-sm-offset-4 col-sm-10">
+        <button type="button" class="btn btn-default" id="addbtn" value="Add robot" onclick="addbtn1();">Add Robot</button>
+		<button type="button" class="btn btn-default" id="rmbtn" value="Remove robot" onclick="rmbtn1();">Remove Last Robot</button>
+	  <br><br>	
+		<button type="reset" class="btn btn-default" id="resetworld" value="Reset world" onclick="resetworld1();">Reset World</button>
+		<button type="reset" class="btn btn-default" value="Reset world" >Reset Values</button>
+	  <br><br>	  
+		<button type="button" class="btn btn-default" id="robotbtn" value="Launch multi_robot" 
+onclick="robotbtn1('{{username}}',custom_pods.value);">Start Simulation</button>
+      </div>
+    </div>
+	</div>
+	<div class="col-sm-6">
+    <h3>Robots</h3>
+  <table class="table" id="table1">
+    <thead>
+      <tr>
+        <th>Robotname</th>
+        <th>Base</th>
+        <th>Camera Sensor</th>
+        <th>Laser Sensor</th>
+	<th>Pose x</th>
+	<th>Pose y</th>
+	<th>Pose z</th>
+      </tr>
+    </thead>
+    
+    </table>
+	</div>
+    </div>
+  </form>
+     {% endblock %}
+
+

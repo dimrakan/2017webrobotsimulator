@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <name>roscloudbridge</name>
+  <version>0.0.0</version>
+  <description>roscloudbridge</description>
+
+  <maintainer email="dimitris.rak@gmail.com">Dimiris </maintainer>
+
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <run_depend>rospy</run_depend>
+
+
+</package>

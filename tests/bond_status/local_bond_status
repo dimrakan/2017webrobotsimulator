@@ -1,0 +1,83 @@
+[INFO] [1520152946.208097]: /cloudsub_2785_1520152926731 Message type bond/Status 
+[INFO] [1520152946.208611]: /cloudsub_2785_1520152926731 Time from previous message 0.104287147522 
+[INFO] [1520152946.343246]: /cloudsub_2785_1520152926731 Message type bond/Status 
+[INFO] [1520152946.343906]: /cloudsub_2785_1520152926731 Time from previous message 0.134944915771 
+[INFO] [1520152947.014733]: /cloudsub_2785_1520152926731 Message type bond/Status 
+[INFO] [1520152947.015051]: /cloudsub_2785_1520152926731 Time from previous message 0.670638084412 
+[INFO] [1520152947.098289]: /cloudsub_2785_1520152926731 Message type bond/Status 
+[INFO] [1520152947.098801]: /cloudsub_2785_1520152926731 Time from previous message 0.0834729671478 
+[INFO] [1520152947.209805]: /cloudsub_2785_1520152926731 Message type bond/Status 
+[INFO] [1520152947.211308]: /cloudsub_2785_1520152926731 Time from previous message 0.111819028854 
+[INFO] [1520152947.343718]: /cloudsub_2785_1520152926731 Message type bond/Status 
+[INFO] [1520152947.344369]: /cloudsub_2785_1520152926731 Time from previous message 0.131989955902 
+[INFO] [1520152948.017214]: /cloudsub_2785_1520152926731 Message type bond/Status 
+[INFO] [1520152948.017647]: /cloudsub_2785_1520152926731 Time from previous message 0.672778129578 
+[INFO] [1520152948.097584]: /cloudsub_2785_1520152926731 Message type bond/Status 
+[INFO] [1520152948.098044]: /cloudsub_2785_1520152926731 Time from previous message 0.0800440311432 
+[INFO] [1520152948.209914]: /cloudsub_2785_1520152926731 Message type bond/Status 
+[INFO] [1520152948.211335]: /cloudsub_2785_1520152926731 Time from previous message 0.112704992294 
+[INFO] [1520152948.342984]: /cloudsub_2785_1520152926731 Message type bond/Status 
+[INFO] [1520152948.344603]: /cloudsub_2785_1520152926731 Time from previous message 0.132159948349 
+
+
+test@ubuntu4:~$ rostopic hz /local/robot/mobile_base_nodelet_manager/bond 
+subscribed to [/local/robot/mobile_base_nodelet_manager/bond]
+average rate: 8.992
+	min: 0.086s max: 0.132s std dev: 0.01898s window: 4
+average rate: 5.244
+	min: 0.086s max: 0.667s std dev: 0.19516s window: 8
+average rate: 4.715
+	min: 0.085s max: 0.667s std dev: 0.21495s window: 12
+average rate: 4.481
+	min: 0.084s max: 0.681s std dev: 0.22479s window: 16
+average rate: 4.388
+	min: 0.076s max: 0.681s std dev: 0.22859s window: 20
+average rate: 4.316
+	min: 0.076s max: 0.681s std dev: 0.23156s window: 24
+average rate: 4.004
+	min: 0.057s max: 0.526s std dev: 0.17286s window: 24
+average rate: 4.007
+	min: 0.057s max: 0.526s std dev: 0.17268s window: 28
+average rate: 4.006
+	min: 0.057s max: 0.526s std dev: 0.17261s window: 32
+average rate: 4.004
+	min: 0.057s max: 0.526s std dev: 0.17266s window: 36
+average rate: 4.005
+	min: 0.057s max: 0.526s std dev: 0.17253s window: 40
+average rate: 4.004
+	min: 0.057s max: 0.526s std dev: 0.17252s window: 44
+average rate: 4.004
+	min: 0.057s max: 0.526s std dev: 0.17251s window: 48
+
+test@ubuntu4:~$ rostopic bw /local/robot/mobile_base_nodelet_manager/bond 
+subscribed to [/local/robot/mobile_base_nodelet_manager/bond]
+average: 729.55B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 4
+average: 598.33B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 8
+average: 564.73B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 12
+average: 549.35B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 16
+average: 540.39B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 20
+average: 534.58B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 24
+average: 530.59B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 28
+^Caverage: 522.41B/s
+	mean: 126.80B min: 124.00B max: 130.00B window: 30
+average: 509.01B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 100
+average: 509.49B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 100
+average: 508.99B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 100
+average: 509.04B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 100
+average: 508.95B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 100
+average: 508.94B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 100
+average: 508.92B/s
+	mean: 127.00B min: 124.00B max: 130.00B window: 100

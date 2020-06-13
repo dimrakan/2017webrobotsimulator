@@ -1,0 +1,66 @@
+root@pod1:/# rostopic info /clock
+Type: rosgraph_msgs/Clock
+
+Publishers:
+ * /gazebo (http://10.32.0.11:39969/)
+
+Subscribers:
+ * /rosout (http://10.32.0.11:46246/)
+ * /robot/cmd_vel_mux (http://10.32.0.11:40440/)
+ * /robot/bumper2pointcloud (http://10.32.0.11:38285/)
+ * /robot/mobile_base_nodelet_manager (http://10.32.0.11:45146/)
+ * /gazebo (http://10.32.0.11:39969/)
+ * /rosbridge_websocket (http://pod1:46608/)
+ * /rosapi (http://pod1:46493/)
+
+
+root@pod1:/# rostopic hz /clock
+subscribed to [/clock]
+WARNING: may be using simulated time
+average rate: 100.000
+        min: 0.010s max: 0.010s std dev: 0.00000s window: 102
+average rate: 100.000
+        min: 0.010s max: 0.010s std dev: 0.00000s window: 202
+average rate: 100.000
+        min: 0.010s max: 0.010s std dev: 0.00000s window: 302
+average rate: 100.000
+        min: 0.010s max: 0.010s std dev: 0.00000s window: 399
+average rate: 100.000
+        min: 0.010s max: 0.010s std dev: 0.00000s window: 500
+^Caverage rate: 100.000
+        min: 0.010s max: 0.010s std dev: 0.00000s window: 537
+
+root@pod1:/# rostopic bw /clock
+subscribed to [/clock]
+average: 805.28B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 97
+average: 806.67B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 804.57B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 796.45B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 809.49B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 805.87B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 796.57B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 801.65B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 802.41B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 802.13B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 787.79B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 757.07B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+average: 824.55B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+^Caverage: 718.09B/s
+        mean: 8.00B min: 8.00B max: 8.00B window: 100
+
+
+
+

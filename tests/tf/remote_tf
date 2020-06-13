@@ -1,0 +1,47 @@
+root@pod1:/# rostopic info /tf
+Type: tf2_msgs/TFMessage
+
+Publishers:
+ * /gazebo (http://10.32.0.11:39969/)
+
+Subscribers: None
+
+
+root@pod1:/# rostopic hz /tf
+subscribed to [/tf]
+WARNING: may be using simulated time
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00205s window: 96
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00248s window: 196
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00218s window: 296
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00257s window: 396
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00254s window: 497
+average rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00253s window: 596
+^Caverage rate: 100.000
+        min: 0.000s max: 0.020s std dev: 0.00258s window: 633
+
+
+subscribed to [/tf]
+average: 11.62KB/s
+        mean: 0.12KB min: 0.12KB max: 0.12KB window: 94
+average: 11.60KB/s
+        mean: 0.12KB min: 0.12KB max: 0.12KB window: 100
+average: 11.27KB/s
+        mean: 0.12KB min: 0.12KB max: 0.12KB window: 100
+average: 12.00KB/s
+        mean: 0.12KB min: 0.12KB max: 0.12KB window: 100
+average: 11.79KB/s
+        mean: 0.12KB min: 0.12KB max: 0.12KB window: 100
+average: 11.70KB/s
+        mean: 0.12KB min: 0.12KB max: 0.12KB window: 100
+average: 11.56KB/s
+        mean: 0.12KB min: 0.12KB max: 0.12KB window: 100
+average: 11.66KB/s
+        mean: 0.12KB min: 0.12KB max: 0.12KB window: 100
+^Caverage: 10.32KB/s
+        mean: 0.12KB min: 0.12KB max: 0.12KB window: 100

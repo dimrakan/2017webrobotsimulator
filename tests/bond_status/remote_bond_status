@@ -1,0 +1,54 @@
+root@pod1:/# rostopic info /robot/mobile_base_nodelet_manager/bond
+Type: bond/Status
+
+Publishers:
+ * /robot/mobile_base_nodelet_manager (http://10.32.0.11:45146/)
+ * /robot/cmd_vel_mux (http://10.32.0.11:40440/)
+ * /robot/bumper2pointcloud (http://10.32.0.11:38285/)
+
+Subscribers:
+ * /robot/mobile_base_nodelet_manager (http://10.32.0.11:45146/)
+ * /robot/cmd_vel_mux (http://10.32.0.11:40440/)
+ * /robot/bumper2pointcloud (http://10.32.0.11:38285/)
+
+
+subscribed to [/robot/mobile_base_nodelet_manager/bond]
+WARNING: may be using simulated time
+average rate: 8.824
+        min: 0.090s max: 0.130s std dev: 0.01700s window: 4
+average rate: 5.185
+        min: 0.090s max: 0.680s std dev: 0.19948s window: 8
+average rate: 4.681
+        min: 0.090s max: 0.680s std dev: 0.21802s window: 12
+average rate: 4.478
+        min: 0.080s max: 0.680s std dev: 0.22559s window: 16
+average rate: 4.368
+        min: 0.080s max: 0.680s std dev: 0.22960s window: 20
+average rate: 4.307
+        min: 0.080s max: 0.680s std dev: 0.23234s window: 24
+average rate: 4.259
+        min: 0.080s max: 0.680s std dev: 0.23495s window: 28
+average rate: 4.223
+        min: 0.080s max: 0.680s std dev: 0.23609s window: 32
+^Caverage rate: 4.202
+        min: 0.080s max: 0.680s std dev: 0.23714s window: 36
+
+
+root@pod1:/# rostopic bw /robot/mobile_base_nodelet_manager/bond
+subscribed to [/robot/mobile_base_nodelet_manager/bond]
+average: 612.26B/s
+        mean: 127.00B min: 124.00B max: 130.00B window: 4
+average: 554.86B/s
+        mean: 127.00B min: 124.00B max: 130.00B window: 8
+average: 538.11B/s
+        mean: 127.00B min: 124.00B max: 130.00B window: 12
+average: 530.05B/s
+        mean: 127.00B min: 124.00B max: 130.00B window: 16
+average: 525.40B/s
+        mean: 127.00B min: 124.00B max: 130.00B window: 20
+average: 522.31B/s
+        mean: 127.00B min: 124.00B max: 130.00B window: 24
+average: 520.13B/s
+        mean: 127.00B min: 124.00B max: 130.00B window: 28
+^Caverage: 493.17B/s
+        mean: 127.00B min: 124.00B max: 130.00B window: 32

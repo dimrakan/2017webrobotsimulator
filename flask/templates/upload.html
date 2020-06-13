@@ -1,0 +1,89 @@
+{% extends "home.html" %}
+
+          {% block control %}
+        <li ><a id="side-home" href="#" style="font-size:17px;">Home</a></li>
+        <li><a id="side-pods" href="#" style="font-size:17px;">Simulation Environment</a></li>
+        <li><a id="side-custom" href="#" style="font-size:17px;">Custom Simulation</a></li>
+        <li class="active"><a id="side-packages" href="#" style="font-size:17px;">Upload Package</a></li>
+        <li ><a id="side-deploys" href="#" style="font-size:17px;">Deployments</a></li>
+
+        {% endblock %}
+
+	  {% block panel %}
+          <div class="row">  
+	  <h1 class="form-group " >Upload your package</h1><div class="form-group col-sm-4"><br>
+<form class="form-horizontal" id="upload" action = "" method = "POST"
+         enctype = "multipart/form-data">
+                 <!-- <div class="form-group col-sm-8"> -->
+         <label class="control-label " for="file">Choose a file</label>
+                 <input class=" btn btn-default " type = "file" size="60" name = "file" id="file" class="inputfile" " onclick="show('{{username}}');"/><br>
+
+          <input class=" btn btn-primary" type = "submit" id="mit" />
+                 <!-- </div> -->
+                 <!-- </div> -->
+      </form>
+       <strong>{{msg}}</strong><br><br>
+
+  <label for="upload_pods">Select Simulation Environment:</label>
+  <select class="form-control" id="upload_pods" onChange="selpod();">
+    <option selected disabled hidden>Choose a Simulation Environment</option>
+    <option value="1">Simulation Environment 1</option>
+    <option value="2">Simulation Environment 2</option>
+    <option value="3">Simulation Environment 3</option>
+   </select>
+</div></div>
+	  <div class="row" id='upload-form' style="display:none">
+	  <div class="col-sm-4" >
+          <div>Select Launch File</div>
+          <div id="dynamicInput">
+       </div> 
+      <div >
+      </div>
+ 
+      <br>
+      <input type="button" class=" btn btn-primary " id="sub" value="Build" onclick="build('{{username}}',upload_pods.value);"/>
+      
+      <input id="lgz" type="button" class=" btn btn-primary" value="Start simulation" onclick="startpack('{{username}}',upload_pods.value);"/> <br><br>
+<h3 id="loading" style="display:none">Loading . . . .</h3>
+	  </div>
+      
+	  <div class="col-sm-offset-1 col-sm-6" >
+
+	   <div class="form-group" >
+        <label for="comment">Build output:</label>
+        <div id="buildout" class="form-control " style="height:300px;border:2px solid grey;overflow:scroll">
+        Output from build.
+
+        </div>
+      </div>
+	  </div> 
+{% endblock %} 
+{% block extra %}
+document.getElementById('upload').action="/users/"+username+"/sim_package?token="+token;
+document.getElementById('lgz').disabled=true;
+if ('{{msg}}'=="File successfully uploaded"){
+      document.getElementById("sub").disabled = false;
+   }
+   if ('{{msg}}'=="Package has been created"){
+      document.getElementById("lgz").disabled = false;
+   }
+function addInput(id,divName,Lfiles,msg) {
+    document.getElementById(divName).removeChild(document.getElementById(divName).childNodes[0]) 
+    if (Lfiles!= '["", ""]') {
+     console.log(Lfiles.length)
+     var len=Lfiles.length
+     }
+     var newDiv = document.createElement('div');
+     var selectHTML = "";
+     selectHTML="<select id="+id+" class='dropdown btn btn-primary' style='block:inline;padding: 7px 5px;margin:5.5px 0;font-size: 18px;border-radius:5px;border:1px solid black;'>";
+
+     for(i = 0; i < len; i = i + 1) {
+         selectHTML += "<option value='" + Lfiles[i] + "'>" + Lfiles[i] + "</option>";
+     }
+     selectHTML += "</select>";
+     newDiv.innerHTML = selectHTML;
+     document.getElementById(divName).appendChild(newDiv);
+    }
+   
+{% endblock %} 
+

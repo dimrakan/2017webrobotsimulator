@@ -1,0 +1,222 @@
+root@pod1:/# rostopic hz /scan
+subscribed to [/scan]
+WARNING: may be using simulated time
+average rate: 2.941
+        min: 0.340s max: 0.340s std dev: 0.00000s window: 2
+average rate: 3.401
+        min: 0.240s max: 0.340s std dev: 0.03666s window: 6
+average rate: 3.292
+        min: 0.240s max: 0.350s std dev: 0.04091s window: 9
+average rate: 3.683
+        min: 0.180s max: 0.350s std dev: 0.05517s window: 14
+average rate: 3.837
+        min: 0.160s max: 0.350s std dev: 0.05693s window: 18
+average rate: 4.000
+        min: 0.160s max: 0.350s std dev: 0.05752s window: 23
+average rate: 4.019
+        min: 0.160s max: 0.350s std dev: 0.05515s window: 27
+average rate: 4.054
+        min: 0.160s max: 0.350s std dev: 0.05400s window: 31
+average rate: 4.142
+        min: 0.150s max: 0.360s std dev: 0.05962s window: 36
+average rate: 4.255
+        min: 0.150s max: 0.360s std dev: 0.05882s window: 41
+average rate: 4.319
+        min: 0.150s max: 0.360s std dev: 0.05653s window: 46
+average rate: 4.367
+        min: 0.150s max: 0.360s std dev: 0.05543s window: 51
+average rate: 4.327
+        min: 0.150s max: 0.360s std dev: 0.05599s window: 54
+average rate: 4.254
+        min: 0.150s max: 0.360s std dev: 0.05642s window: 58
+average rate: 4.245
+        min: 0.150s max: 0.360s std dev: 0.05494s window: 62
+average rate: 4.215
+        min: 0.150s max: 0.360s std dev: 0.05481s window: 66
+average rate: 4.182
+        min: 0.150s max: 0.360s std dev: 0.05463s window: 70
+average rate: 4.152
+        min: 0.150s max: 0.360s std dev: 0.05459s window: 73
+average rate: 4.078
+        min: 0.150s max: 0.370s std dev: 0.05770s window: 76
+average rate: 4.046
+        min: 0.150s max: 0.370s std dev: 0.05758s window: 79
+average rate: 4.006
+        min: 0.150s max: 0.370s std dev: 0.05834s window: 82
+average rate: 3.968
+        min: 0.150s max: 0.370s std dev: 0.05820s window: 86
+average rate: 3.917
+        min: 0.150s max: 0.430s std dev: 0.06162s window: 88
+average rate: 3.902
+        min: 0.150s max: 0.430s std dev: 0.06045s window: 92
+average rate: 3.926
+        min: 0.150s max: 0.430s std dev: 0.05963s window: 96
+average rate: 3.927
+        min: 0.150s max: 0.430s std dev: 0.06042s window: 100
+average rate: 3.903
+        min: 0.150s max: 0.430s std dev: 0.06037s window: 104
+average rate: 3.890
+        min: 0.150s max: 0.430s std dev: 0.05975s window: 107
+average rate: 3.898
+        min: 0.150s max: 0.430s std dev: 0.05990s window: 111
+average rate: 3.899
+        min: 0.150s max: 0.430s std dev: 0.05921s window: 115
+average rate: 3.891
+        min: 0.150s max: 0.430s std dev: 0.05862s window: 119
+average rate: 3.874
+        min: 0.150s max: 0.430s std dev: 0.05837s window: 122
+average rate: 3.864
+        min: 0.150s max: 0.430s std dev: 0.05862s window: 125
+average rate: 3.854
+        min: 0.150s max: 0.430s std dev: 0.05788s window: 129
+average rate: 3.826
+        min: 0.150s max: 0.430s std dev: 0.05861s window: 132
+average rate: 3.833
+        min: 0.150s max: 0.430s std dev: 0.05847s window: 136
+average rate: 3.822
+        min: 0.150s max: 0.430s std dev: 0.05908s window: 139
+average rate: 3.811
+        min: 0.150s max: 0.430s std dev: 0.05866s window: 143
+average rate: 3.797
+        min: 0.150s max: 0.430s std dev: 0.05890s window: 146
+average rate: 3.783
+        min: 0.150s max: 0.430s std dev: 0.05875s window: 149
+average rate: 3.809
+        min: 0.150s max: 0.430s std dev: 0.05876s window: 154
+average rate: 3.826
+        min: 0.150s max: 0.430s std dev: 0.05883s window: 159
+average rate: 3.824
+        min: 0.150s max: 0.430s std dev: 0.05857s window: 162
+average rate: 3.827
+        min: 0.150s max: 0.430s std dev: 0.05818s window: 166
+average rate: 3.817
+        min: 0.150s max: 0.430s std dev: 0.05802s window: 170
+average rate: 3.817
+        min: 0.150s max: 0.430s std dev: 0.05778s window: 173
+average rate: 3.817
+        min: 0.150s max: 0.430s std dev: 0.05845s window: 177
+average rate: 3.822
+        min: 0.150s max: 0.430s std dev: 0.05846s window: 181
+average rate: 3.826
+        min: 0.150s max: 0.430s std dev: 0.05791s window: 185
+average rate: 3.819
+        min: 0.150s max: 0.430s std dev: 0.05782s window: 188
+average rate: 3.808
+        min: 0.150s max: 0.430s std dev: 0.05777s window: 192
+average rate: 3.813
+        min: 0.150s max: 0.430s std dev: 0.05750s window: 196
+average rate: 3.805
+        min: 0.150s max: 0.430s std dev: 0.05748s window: 199
+average rate: 3.794
+        min: 0.150s max: 0.430s std dev: 0.05750s window: 202
+average rate: 3.777
+        min: 0.150s max: 0.430s std dev: 0.05773s window: 206
+average rate: 3.775
+        min: 0.150s max: 0.430s std dev: 0.05791s window: 209
+average rate: 3.777
+        min: 0.150s max: 0.430s std dev: 0.05777s window: 213
+average rate: 3.779
+        min: 0.150s max: 0.430s std dev: 0.05745s window: 217
+average rate: 3.784
+        min: 0.150s max: 0.430s std dev: 0.05731s window: 221
+
+
+
+root@pod1:/# rostopic bw /scan
+subscribed to [/scan]
+average: 13.07KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 3
+average: 9.83KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 6
+average: 10.10KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 10
+average: 10.94KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 15
+average: 10.28KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 18
+average: 10.32KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 22
+average: 9.95KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 25
+average: 10.37KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 30
+average: 10.37KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 34
+average: 10.11KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 37
+average: 9.90KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 40
+average: 10.40KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 46
+average: 10.41KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 50
+average: 10.42KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 54
+average: 10.43KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 58
+average: 10.43KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 62
+average: 10.28KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 65
+average: 10.44KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 70
+average: 10.59KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 75
+average: 10.45KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 78
+average: 10.32KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 81
+average: 10.21KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 84
+average: 10.34KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 89
+average: 10.24KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 92
+average: 10.14KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 95
+average: 10.15KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 99
+average: 10.04KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 10.02KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 10.13KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 9.97KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 10.04KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 9.97KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 10.14KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 10.09KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 10.08KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 10.07KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 10.11KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 9.91KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 9.75KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 9.67KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 9.74KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 9.66KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 9.78KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 9.77KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 9.60KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 9.54KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+average: 9.43KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
+^Caverage: 9.52KB/s
+        mean: 2.63KB min: 2.63KB max: 2.63KB window: 100
