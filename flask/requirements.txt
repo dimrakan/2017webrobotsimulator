@@ -9,7 +9,7 @@ APScheduler == 3.3.1
 Flask == 0.12.2
 
 # app.py: 3
-Flask_Cors == 3.0.3
+Flask_Cors == 3.0.9
 
 # app.py: 4
 Flask_PyMongo == 0.5.1
